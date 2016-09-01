@@ -23,8 +23,8 @@
   "scripts": {
     "build": "npm run clean && npm run build:umd && npm run build:umd:min",
     "build:dev": "npm run build:umd -- --watch",
-    "build:umd": "NODE_ENV=production webpack src/Clock.js dist/Clock.js",
-    "build:umd:min": "NODE_ENV=production webpack src/Clock.js dist/Clock.min.js -p",
+    "build:umd": "NODE_ENV=production webpack src/Clock.js dist/clock-free.js",
+    "build:umd:min": "NODE_ENV=production webpack src/Clock.js dist/clock-free.min.js -p",
     "clean": "rimraf dist",
     "check:src": "npm run lint && npm run test",
     "demo": "browser-sync start --serveStatic example dist",
