@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="Clock.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.js"></script>
+</head>
+<body>
+<p>Hello clock-free</p>
+<script>
+    // Do Yourself
+    var clock = new Clock()
+
+    clock.bind('tick', () => {
+        console.log('Unix timestampe: ', clock.unixTS())
+        console.log('UTC timezoneOffset: ', clock.utcOffset())
+        console.log('Year: ', clock.get('year'))
+        console.log('Month: ',clock.get('month'))
+        console.log('Date: ',clock.get('date'))
+        console.log('Hour: ',clock.get('hour'))
+        console.log('Minute: ',clock.get('minute'))
+        console.log('Second: ',clock.get('second'))
+        console.log('Millisecond: ',clock.get('millisecond'))
+    })
+
+</script>
+<script id="__bs_script__">//<![CDATA[
+document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.14.0.js'><\/script>".replace("HOST", location.hostname));
+//]]></script>
+</body>
+</html>

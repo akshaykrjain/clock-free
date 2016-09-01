@@ -1,0 +1,53 @@
+{
+  "name": "clock-free",
+  "description": "",
+  "version": "0.1.0",
+  "homepage": "https://github.com/cswleocsw/clock-free",
+  "author": {
+    "name": "cswleocsw",
+    "email": "cswleo@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cswleocsw/clock-free.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cswleocsw/clock-free/issues"
+  },
+  "license": "MIT",
+  "main": "dist/clock-free.min.js",
+  "engines": {
+    "node": ">= 6.3.0",
+    "npm": ">=3.10.6"
+  },
+  "scripts": {
+    "build": "npm run clean && npm run build:umd && npm run build:umd:min",
+    "build:dev": "npm run build:umd -- --watch",
+    "build:umd": "NODE_ENV=production webpack src/Clock.js dist/Clock.js",
+    "build:umd:min": "NODE_ENV=production webpack src/Clock.js dist/Clock.min.js -p",
+    "clean": "rimraf dist",
+    "check:src": "npm run lint && npm run test",
+    "demo": "browser-sync start --serveStatic example dist",
+    "lint": "eslint src test example build",
+    "test": "mocha --compilers js:babel-register --recursive",
+    "test:dev": "npm test -- --watch"
+  },
+  "devDependencies": {
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-polyfill": "^6.13.0",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-register": "^6.11.6",
+    "chai": "^3.5.0",
+    "eslint": "^3.3.1",
+    "express": "^4.14.0",
+    "log4js-free": "0.0.3",
+    "mocha": "^3.0.2",
+    "rimraf": "^2.5.4",
+    "webpack": "^1.13.2"
+  },
+  "dependencies": {
+    "ticker-free": "0.0.1"
+  }
+}
